@@ -6,19 +6,8 @@
 }
 
 /* ---------------- MAIN ---------------- */
-*,
-*::after,
-*::before {
-  scroll-behavior: smooth;
-  box-sizing: border-box;
-}
-
 body {
-  overflow-x: hidden;
   background-color: var(--white);
-}
-body > div:not(.hero) {
-  margin-top: 55px;
 }
 
 h1 {

@@ -8,4 +8,6 @@ Version: 0.1
 Tags: Esport, Tournoi, Communauté
 */
 
-@import url("/assets/css/main.css");
+/* Files */
+@import url(assets/css/main.css);
+@import url(assets/css/normalize.css);
