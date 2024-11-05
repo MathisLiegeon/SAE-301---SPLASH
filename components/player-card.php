@@ -1,5 +1,5 @@
 <li>
-    <a href="<?php the_permalink();?>">
+    <a href="<?php get_permalink($args['post_id']);?>">
         <span class="team-name">
             <?php echo esc_html($args['name']); ?>
         </span>

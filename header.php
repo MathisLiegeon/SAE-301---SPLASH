@@ -17,17 +17,17 @@
           wp_nav_menu(array('theme_location' => 'header-menu'));
         ?>
       </nav>
-      <div class="header-nav-secondary">
-        <span>
-          <img src="<?php echo get_template_directory_uri();?>/assets/icons/icon_person.svg" alt="Icone">
-        </span>
-        <span>
-          <img src="<?php echo get_template_directory_uri();?>/assets/icons/icon_logo.svg" alt="Icone">
-        </span>
-        <div class="header-burger" id="burger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
     </header>
+    <nav class="header-nav-secondary">
+      <span>
+        <img src="<?php echo get_template_directory_uri();?>/assets/icons/icon_person.svg" alt="Icone">
+      </span>
+      <span>
+        <img src="<?php echo get_template_directory_uri();?>/assets/icons/icon_logo.svg" alt="Icone">
+      </span>
+      <div class="header-burger" id="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>

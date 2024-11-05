@@ -12,6 +12,17 @@ function hide_admin_bar() {
 }
 add_filter('show_admin_bar', 'hide_admin_bar');
 
+// Show current template if needed
+function show_template() {
+    if (is_user_logged_in()) {
+        global $template;
+        echo '<div style="background: #f1f1f1; padding: 10px; margin-top: 20px;">';
+        echo 'Template utilisé : ' . $template;
+        echo '</div>';
+    }
+}
+add_action('wp_footer', 'show_template');
+
 // Add thumbnail support for some custom post types
 add_theme_support('post-thumbnails');
 
@@ -88,3 +99,41 @@ function get_team_finished_matches($team_id) {
     return $query->posts;
 }
 
+function get_user_team($user_id) {
+    $args = array(
+        'post_type' => 'team',
+        'posts_per_page' => 1,
+        'meta_query' => array(
+            array(
+                'key' => 'members',
+                'value' => '"' . $user_id . '"',
+                'compare' => 'LIKE'
+            ),
+        )
+    );
+
+    $query = new WP_Query($args);
+    return $query->posts[0];
+}
+
+function get_user_post($id) {
+    $args = array(
+        'post_type' => 'user',
+        'posts_per_page' => 1,
+        'meta_query' => array(
+            array(
+                'key' => 'user',
+                'value' => $id,
+                'compare' => 'LIKE'
+            )
+        )
+    );
+
+    $the_query = new WP_Query($args);
+    console_log('the_query');
+    console_log($the_query->posts);
+    $user_id = $the_query->posts[0]->ID;
+    console_log('user_id');
+    console_log($user_id);
+    return $user_id;
+}

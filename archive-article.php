@@ -16,8 +16,9 @@ if ($the_query->have_posts()) :
     while ($the_query->have_posts()) : $the_query->the_post();
     console_log('the_query');
     console_log($the_query->posts);
-?>
+?> 
 
+<h2>Dernières actus</h2>
 <?php
 get_template_part('components/news-card', null, array (
     'url' => get_permalink(),

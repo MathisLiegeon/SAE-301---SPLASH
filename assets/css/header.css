@@ -1,0 +1,59 @@
+.header {
+  background-color: red;
+  filter: drop-shadow(-1px 10px 4px rgba(0, 0, 0, 0.2));
+  position: fixed;
+  width: 100vw;
+  z-index: 0;
+  top: 0;
+
+  transform: translateX(100%);
+  height: 100vh;
+  transition: all 0.3s ease-in-out;
+}
+
+.header-nav-secondary {
+    background-color: green;
+    position: fixed;
+    top: 0;
+    width: 100svw;
+    height: 46px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header.open {
+  transform: translateX(0);
+}
+
+/* Burger */
+.header-burger {
+  z-index: 1000;
+}
+.header-burger span {
+  display: block;
+  width: 35px;
+  height: 1.5px;
+  margin: 7px;
+  background-color: black;
+  transition: all 0.3s ease-in-out;
+}
+/* When open */
+.no-scroll {
+  overflow: hidden;
+}
+.header-burger.open span:nth-child(1) {
+  transform: rotate(45deg);
+  position: relative;
+  top: 8.5px;
+}
+
+.header-burger.open span:nth-child(2) {
+  transform: scaleX(0);
+  transform-origin: center;
+}
+
+.header-burger.open span:nth-child(3) {
+  transform: rotate(-45deg);
+  position: relative;
+  top: -8.5px;
+}

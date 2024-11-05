@@ -14,12 +14,12 @@ console_log($social);
 console_log($social['url']);
 ?>
 
-<nav class="team-nav">
+<nav class="team-nav single-nav">
     <a href="#team-roaster" class="team-nav-element">Présentation</a>
     <a href="#team-activity" class="team-nav-element">Activité</a>
     <a href="#team-stats" class="team-nav-element">Statistiques</a>
 </nav>
- 
+
 <header class="team-header">
     <span class="team-img">
         <?php the_post_thumbnail('large');?>
@@ -32,45 +32,12 @@ console_log($social['url']);
     </a>
 </header>
 
-<div class="team-roaster" id="team-roaster">
-    <div class="team-roaster-content">
-        <h3>Personnel</h3>
-        <ul class="team-roaster-list">
-            <?php
-            get_template_part('components/player-card', null, array (
-                'name' => $captain['display_name'],
-                'id' => $captain['ID'],
-                'type' => 'Capitaine'
-            ));
-            get_template_part('components/player-card', null, array (
-                'name' => $coach['display_name'],
-                'id' => $coach['ID'],
-                'type' => 'Coach'
-            ));
-            ?>
-        </ul>
-    </div>
-    <div class="team-roaster-content">
-        <h3>Membres</h3>
-        <ul class="team-roaster-list">
-            <?php
-            foreach ($members as $member) {
-                get_template_part('components/player-card', null, array (
-                    'name' => $member['display_name'],
-                    'id' => $member['ID'],
-                    'type' => 'Joueur'
-                ));
-            }
-            ?>
-        </ul>
-    </div>
+<?php get_template_part('archive-user'); ?>
 
-    <?php get_template_part('archive-match'); ?>
-
-    <div class="team-stats" id="team-stats">
-        <h3>Statistiques</h3>
-        <span>graph</span>
-    </div>
+<?php get_template_part('archive-match'); ?>
+<div class="team-stats" id="team-stats">
+    <h3>Statistiques</h3>
+    <span>graph</span>
 </div>
 
 <?php

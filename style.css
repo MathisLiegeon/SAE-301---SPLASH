@@ -8,7 +8,12 @@ Version: 0.1
 Tags: Esport, Tournoi, Communauté
 */
 
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
 /* Files */
+@import url(assets/css/bracket.css);
+
 @import url(assets/css/main.css);
 @import url(assets/css/normalize.css);
-@import url(assets/css/bracket.css);
+@import url(assets/css/header.css);
