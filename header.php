@@ -19,12 +19,12 @@
       </nav>
     </header>
     <nav class="header-nav-secondary">
-      <span>
+      <a href="">
         <img src="<?php echo get_template_directory_uri();?>/assets/icons/icon_person.svg" alt="Icone">
-      </span>
-      <span>
+      </a>
+      <a href="<?php echo esc_url(home_url());?>">
         <img src="<?php echo get_template_directory_uri();?>/assets/icons/icon_logo.svg" alt="Icone">
-      </span>
+      </a>
       <div class="header-burger" id="burger">
         <span></span>
         <span></span>

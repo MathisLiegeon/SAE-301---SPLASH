@@ -1,18 +1,26 @@
 /* ---------------- CUSTOM STYLES ---------------- */
 :root {
   /* Colors */
-
-  /* Fonts */
-  --family: "Inria Sans", sans-serif;
   --primary: #E48717;
   --secondary: #5A5F76;
-  --teriary: #424863;
+  --tertiary: #424863;
   --white: #F6F6F6;
   --black: #121212;
   --gray: #393939;
   --lightgray: #C1C1C1;
   --green: #8DC686;
   --red: #985354;
+
+  /* Fonts */
+  --family: "Inria Sans", sans-serif;
+  --title-size: 3rem;
+  --title-weight: 600;
+  --subtitle-size: 2rem;
+  --subtitle-weight: 600;
+  --text-size: 1rem;
+  --text-weight: 300;
+  --small-text-size: 0.8rem;
+  --small-text-weight: 300;
 }
 
 /* ---------------- MAIN ---------------- */
@@ -27,7 +35,7 @@ body > div:not(.hero){
 }
 
 body {
-  background-color: var(--white);
+  background-color: var(--secondary);
 }
 
 h1 {

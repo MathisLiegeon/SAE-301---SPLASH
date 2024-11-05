@@ -1,5 +1,5 @@
 .header {
-  background-color: red;
+  background-color: var(--secondary);
   filter: drop-shadow(-1px 10px 4px rgba(0, 0, 0, 0.2));
   position: fixed;
   width: 100vw;
@@ -9,17 +9,24 @@
   transform: translateX(100%);
   height: 100vh;
   transition: all 0.3s ease-in-out;
+
+  padding-top: 46px;
+}
+
+.header-nav {
+  height: 100svh;
 }
 
 .header-nav-secondary {
-    background-color: green;
-    position: fixed;
-    top: 0;
-    width: 100svw;
-    height: 46px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  background-color: var(--tertiary);
+  position: fixed;
+  top: 0;
+  width: 100svw;
+  height: 46px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0rem 1rem;
 }
 .header.open {
   transform: translateX(0);
@@ -28,23 +35,38 @@
 /* Burger */
 .header-burger {
   z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: end;
 }
 .header-burger span {
   display: block;
-  width: 35px;
   height: 1.5px;
-  margin: 7px;
-  background-color: black;
+  background-color: var(--white);
   transition: all 0.3s ease-in-out;
 }
+.header-burger span:nth-child(1) {
+  width: 15px;
+}
+.header-burger span:nth-child(2) {
+  width: 25px;
+}
+.header-burger span:nth-child(3) {
+  width: 35px;
+}
+
 /* When open */
 .no-scroll {
   overflow: hidden;
 }
+.header-burger.open {
+  gap: 0;
+}
 .header-burger.open span:nth-child(1) {
-  transform: rotate(45deg);
+  transform: rotate(45deg) translateY(1px);
   position: relative;
-  top: 8.5px;
+  width: 35px;
 }
 
 .header-burger.open span:nth-child(2) {
@@ -53,7 +75,53 @@
 }
 
 .header-burger.open span:nth-child(3) {
-  transform: rotate(-45deg);
+  transform: rotate(-45deg) translateY(-1px);
   position: relative;
-  top: -8.5px;
+}
+
+/* MAIN HEADER */
+#menu-header-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 1.5rem;
+  width: 100%;
+  padding: 10rem 3rem;
+}
+#menu-header-menu li a {
+  text-align: end;
+  text-transform: uppercase;
+  color: white;
+  font-size: var(--subtitle-size);
+}
+
+#menu-item-87,
+#menu-item-83 {
+  position: absolute;
+  bottom: 0;
+  align-self: center;
+
+  white-space: nowrap;
+  text-transform: uppercase;
+  height: 70px;
+  width: 250px;
+  text-align: center;
+  display: grid;
+  place-content: center;
+  align-items: center;
+}
+#menu-item-87 > a,
+#menu-item-83 > a {
+  font-size: var(--text-size);
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+#menu-item-87 {
+  transform: translateY(-200%);
+}
+#menu-item-83 {
+  background-color: var(--primary);
+  transform: translateY(-100%);
 }
