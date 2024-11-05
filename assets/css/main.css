@@ -1,0 +1,53 @@
+/* ---------------- CUSTOM STYLES ---------------- */
+:root {
+  /* Colors */
+
+  /* Fonts */
+}
+
+/* ---------------- MAIN ---------------- */
+*,
+*::after,
+*::before {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--white);
+}
+body > div:not(.hero) {
+  margin-top: 55px;
+}
+
+h1 {
+  font-size: var(--title-size);
+  font-weight: var(--title-weight);
+  line-height: 55px;
+}
+h2 {
+  font-size: var(--subtitle-size);
+  font-weight: var(--subtitle-weight);
+  line-height: 55px;
+}
+h4 {
+  font-size: 1.2rem;
+  font-weight: var(--text-weight);
+}
+p {
+  font-size: var(--text-size);
+  font-weight: var(--text-weight);
+  line-height: 20px;
+}
+span {
+  font-size: var(--small-text-size);
+  font-weight: var(--small-text-weight);
+  line-height: 17px;
+}
+
+/* ---------------- COMPONENTS ---------------- */
+
+/* ---------------- ERROR MESSAGES ---------------- */
+
+/* ---------------- ANIMATIONS ---------------- */
