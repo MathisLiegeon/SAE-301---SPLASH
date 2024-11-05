@@ -23,10 +23,10 @@ if ($the_query->have_posts()) :
                 </div>
                 <div class="form-search-container-teams">
                     <header id="teams-header" class="teams-header">
-                        <h1>Liste des projets</h1>
+                        <h1>Parcourir les équipes</h1>
                         <div class="form-search form-search-teams">
                             <img src="<?php echo get_template_directory_uri();?>/assets/icons/icon_search.svg" alt="Icone représentant une loupe">
-                            <input type="text" id="project-search-5" placeholder="Rechercher un projet" name="">
+                            <input type="text" id="project-search-5" placeholder="Rechercher" name="">
                         </div>
                     </header>
                     <ul class="teams-list form-search-option">

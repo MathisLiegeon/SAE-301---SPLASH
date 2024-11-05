@@ -15,11 +15,11 @@ console_log($social['url']);
 ?>
 
 <nav class="team-nav">
-    <a class="team-nav-element">Présentation</a>
-    <a class="team-nav-element">Activité</a>
-    <a class="team-nav-element">Statistiques</a>
+    <a href="#team-roaster" class="team-nav-element">Présentation</a>
+    <a href="#team-activity" class="team-nav-element">Activité</a>
+    <a href="#team-stats" class="team-nav-element">Statistiques</a>
 </nav>
-
+ 
 <header class="team-header">
     <span class="team-img">
         <?php the_post_thumbnail('large');?>
@@ -32,7 +32,7 @@ console_log($social['url']);
     </a>
 </header>
 
-<div class="team-roaster">
+<div class="team-roaster" id="team-roaster">
     <div class="team-roaster-content">
         <h3>Personnel</h3>
         <ul class="team-roaster-list">
@@ -67,7 +67,7 @@ console_log($social['url']);
 
     <?php get_template_part('archive-match'); ?>
 
-    <div class="team-roaster-content">
+    <div class="team-stats" id="team-stats">
         <h3>Statistiques</h3>
         <span>graph</span>
     </div>

@@ -1,4 +1,4 @@
-<div class="team-activity">
+<div class="team-activity" id="team-activity">
         <h3>Activité</h3>
         <div class="team-activity-container">
             <h4>Matchs en cours/à venir</h4>
