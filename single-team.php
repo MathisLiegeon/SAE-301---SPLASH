@@ -9,8 +9,9 @@ $ID = get_the_ID();
 $captain = get_field('captain');
 $coach = get_field('coach');
 $members = get_field('members');
-$social_link = get_field('social_link');
-$social_label = get_field('social_label');
+$social = get_field('social');
+console_log($social);
+console_log($social['url']);
 ?>
 
 <nav class="team-nav">
@@ -26,8 +27,8 @@ $social_label = get_field('social_label');
     <h2 class="team-title">
         <?php the_title();?>
     </h2>
-    <a class="team-social" href="<?php echo esc_url($social_link);?>">
-        <?php echo esc_html($social_label);?>
+    <a class="team-social" href="<?php echo esc_url($social['url']);?>">
+       @<?php echo esc_html($social['title']);?>
     </a>
 </header>
 
@@ -64,111 +65,7 @@ $social_label = get_field('social_label');
         </ul>
     </div>
 
-    <div class="team-activity">
-        <h3>Activité</h3>
-        <div class="team-activity-container">
-            <h4>Matchs en cours/à venir</h4>
-            <ul>
-            <?php
-            $upcoming_matches = get_team_upcoming_matches($ID);
-            console_log('upcoming_matches');
-            console_log($upcoming_matches);
-            if ($upcoming_matches) {
-                foreach ($upcoming_matches as $match) :
-                    $name = $match->post_title;
-                    $match_id = $match->ID;
-                    $tournament = get_post_meta($match_id, 'tournament', true);
-                    $tournament_id = $tournament[0];
-                    $team_1 = get_post_meta($match_id, 'team-1', true);
-                    $team_2 = get_post_meta($match_id, 'team-2', true);
-                    $score_te1 = get_post_meta($match_id, 'score_te1', true);
-                    $score_te2 = get_post_meta($match_id, 'score_te2', true);
-                    $date = get_post_meta($match_id, 'start', true);
-
-                    if ($ID === $team_1[0]) {
-                        get_template_part('components/match-card', null, array(
-                            'to_url' => get_permalink($tournament_id),
-                            'to_img' => $tournament_id,
-                            'te1_name' => get_the_title($team_1[0]),
-                            'te1_img' => $team_1[0],
-                            'te1_url' => get_permalink($team_1[0]),
-                            'te2_name' => get_the_title($team_2[0]),
-                            'te2_img' => $team_2[0],
-                            'te2_url' => get_permalink($team_2[0]),
-                            'te1_score' => $score_te1,
-                            'te2_score' => $score_te2,
-                            'date' => $date
-                    ));
-                    } else {
-                        get_template_part('components/match-card', null, array(
-                            'to_url' => get_permalink($tournament_id),
-                            'to_img' => $tournament_id,
-                            'te1_name' => get_the_title($team_2[0]),
-                            'te1_img' => $team_2[0],
-                            'te1_url' => get_permalink($team_2[0]),
-                            'te2_name' => get_the_title($team_1[0]),
-                            'te2_img' => $team_1[0],
-                            'te1_url' => get_permalink($team_1[0]),
-                            'te1_score' => $score_te2,
-                            'te2_score' => $score_te1,
-                            'date' => $date
-                        ));
-                    }
-                endforeach;
-            }
-            ?>
-            </ul>
-        </div>
-        <div class="team-activity-container">
-            <h4>Matchs terminés</h4>
-            <ul>
-            <?php
-            $upcoming_matches = get_team_finished_matches($ID);
-            console_log('upcoming_matches');
-            console_log($upcoming_matches);
-            if ($upcoming_matches) {
-                foreach ($upcoming_matches as $match) :
-                    $name = $match->post_title;
-                    $match_id = $match->ID;
-                    $tournament = get_post_meta($match_id, 'tournament', true);
-                    $tournament_id = $tournament[0];
-                    $team_1 = get_post_meta($match_id, 'team-1', true);
-                    $team_2 = get_post_meta($match_id, 'team-2', true);
-                    $score_te1 = get_post_meta($match_id, 'score_te1', true);
-                    $score_te2 = get_post_meta($match_id, 'score_te2', true);
-                    $date = get_post_meta($match_id, 'start', true);
-
-                    if ($ID === $team_1[0]) {
-                        get_template_part('components/match-card', null, array(
-                            'to_url' => get_permalink($tournament_id),
-                            'to_img' => $tournament_id,
-                            'te1_name' => get_the_title($team_1[0]),
-                            'te1_img' => $team_1[0],
-                            'te2_name' => get_the_title($team_2[0]),
-                            'te2_img' => $team_2[0],
-                            'te1_score' => $score_te1,
-                            'te2_score' => $score_te2,
-                            'date' => $date
-                    ));
-                    } else {
-                        get_template_part('components/match-card', null, array(
-                            'to_url' => get_permalink($tournament_id),
-                            'to_img' => $tournament_id,
-                            'te1_name' => get_the_title($team_2[0]),
-                            'te1_img' => $team_2[0],
-                            'te2_name' => get_the_title($team_1[0]),
-                            'te2_img' => $team_1[0],
-                            'te1_score' => $score_te2,
-                            'te2_score' => $score_te1,
-                            'date' => $date
-                        ));
-                    }
-                endforeach;
-            }
-            ?>
-            </ul>
-        </div>
-    </div>
+    <?php get_template_part('archive-match'); ?>
 
     <div class="team-roaster-content">
         <h3>Statistiques</h3>

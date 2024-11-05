@@ -39,7 +39,6 @@ if ($the_query->have_posts()) :
                         ?>
                         <li class="teams-element search">
                             <a href="<?php echo esc_url(get_permalink());?>" class="teams-link">
-                                <img src="" alt="Logo de l'équipe" class="teams-bg">
                                 <span class="teams-img">
                                     <?php the_post_thumbnail('large');?>
                                 </span>
