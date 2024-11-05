@@ -1,0 +1,140 @@
+/* .bracket-container {
+  padding: 10px 0;
+}
+
+.bracket-col-label {
+  margin-bottom: 15px;
+  color: #444;
+  font-size: 11px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.bracket-row {
+    position: relative;
+}
+
+a.bracket-item {
+    color: #444;
+}
+
+a:link, a:visited, a:active, a:not([href]) {
+    color: #0582b8;
+    cursor: pointer;
+}
+
+.bracket-item-team.mod-first {
+    border-bottom: 1px solid #ccc;
+    border-top: 0;
+}
+
+.bracket-item-team {
+    display: flex;
+    justify-content: space-between;
+    width: 140px;
+    border-top: 1px solid #ccc;
+}
+
+.bracket-item-team-name {
+    height: 32px;
+    display: flex;
+    align-items: center;
+}
+
+.bracket-item img {
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+.bracket-item-team-name span {
+    width: 75px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 5px 0;
+}
+
+.bracket-item-team-score {
+    flex: 0 0 32px;
+    height: 32px;
+    justify-content: center;
+    border-left: 1px solid #ccc;
+    align-items: center;
+    display: flex;
+}
+
+
+.bracket-item-team.mod-winner {
+    background: #cee9d3;
+    font-weight: 700;
+}
+
+.bracket-item-status {
+    position: absolute;
+    bottom: -22px;
+    left: 0;
+    font-size: 11px;
+    padding-left: 8px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 15px;
+    line-height: 15px;
+}
+
+.bracket-item-status span {
+    position: relative;
+    display: block;
+}
+
+
+
+.bracket-item-line {
+    position: absolute;
+    width: 30px;
+    height: 31px;
+    right: -30px;
+    top: 32px;
+    border: 2px solid #aaa;
+    border-left: 0;
+    border-bottom: 0;
+    border-radius: 0 3px 0 0;
+}
+
+.bracket-item-line:after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    height: 4px;
+    right: -30px;
+    width: 30px;
+    border: 2px solid #aaa;
+    border-top: 0;
+    border-right: 0;
+    border-radius: 0 0 0 3px;
+}
+
+.bracket-item {
+    right: 0;
+    font-size: 11px;
+    font-weight: 400;
+    display: block;
+    margin-bottom: 31px;
+    position: relative;
+    border: 2px solid #aaa;
+    border-radius: 3px;
+    z-index: 1;
+}
+
+.bracket-container.mod-upper .bracket-col.mod-2 {
+    padding-top: 50px;
+}
+
+.bracket-col {
+    margin-right: 56px;
+} */
+
+
+

@@ -37,7 +37,7 @@ if ($the_query->have_posts()) :
                         $captain_name = $captain['display_name']
 
                         ?>
-                        <li class="teams-element search">
+                        <li class="teams-element search-element             ">
                             <a href="<?php echo esc_url(get_permalink());?>" class="teams-link">
                                 <span class="teams-img">
                                     <?php the_post_thumbnail('large');?>

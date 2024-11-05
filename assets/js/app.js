@@ -29,7 +29,6 @@ document.addEventListener("DOMContentLoaded", function () {
   function addClickAndTouchListener(element, callback) {
     if (element) {
       element.addEventListener("click", callback);
-        callback();
     }
   }
 
@@ -40,7 +39,9 @@ document.addEventListener("DOMContentLoaded", function () {
       'input[type="text"]:not([readonly])'
     );
     const options = container.querySelector(".form-search-option");
-    const optionsList = options ? options.querySelectorAll("li.search") : [];
+    const optionsList = options
+      ? options.querySelectorAll("li.search-element")
+      : [];
 
     addClickAndTouchListener(selectOption, function () {
       container.classList.toggle("active");
