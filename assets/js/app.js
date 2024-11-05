@@ -29,10 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function addClickAndTouchListener(element, callback) {
     if (element) {
       element.addEventListener("click", callback);
-      element.addEventListener("touchend", function (event) {
-        event.preventDefault();
         callback();
-      });
     }
   }
 

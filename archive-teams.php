@@ -40,6 +40,9 @@ if ($the_query->have_posts()) :
                         <li class="teams-element search">
                             <a href="<?php echo esc_url(get_permalink());?>" class="teams-link">
                                 <img src="" alt="Logo de l'équipe" class="teams-bg">
+                                <span class="teams-img">
+                                    <?php the_post_thumbnail('large');?>
+                                </span>
                                 <h3 class="teams-title">
                                     <?php echo esc_html(get_the_title());?>
                                 </h3>
@@ -68,7 +71,7 @@ else :
 ?>
 <div class="no-content-error-message">
     <p>
-        Aucun projet n'a été créée pour l'instant
+        Aucune équipe ne participe au tournoi pour l'instant
     </p>
 </div>
 
