@@ -1,0 +1,18 @@
+.article-wrapper {
+    padding: 56px 1rem 1rem 1rem;
+}
+
+.article-thumbnail img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+}
+.article-title {
+    margin-bottom: 1rem;
+}
+.article-content {
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
