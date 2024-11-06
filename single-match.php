@@ -64,6 +64,10 @@ $vod_3 = get_field('vod-3');
     <h3>VODS & CLIPS</h3>
     <div class="match-content">
         <?php
+        console_log('VODS :');
+        console_log($vod_1);
+        console_log($vod_2);
+        console_log($vod_2);
         $VODS = [$vod_1, $vod_2, $vod_3];
         console_log($VODS);
         $has_valid_vod = false;
@@ -79,7 +83,7 @@ $vod_3 = get_field('vod-3');
         if ($has_valid_vod) :
             foreach ($VODS as $VOD) :
             get_template_part('components/live-card', null, array (
-                'title' => $VOD['title'],
+              'title' => $VOD ? $VOD['title'] : "",
                 'link' => $VOD['url']
             ));
 

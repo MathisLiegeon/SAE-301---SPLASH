@@ -165,10 +165,13 @@ function get_user_post($id) {
     $the_query = new WP_Query($args);
     console_log('the_query');
     console_log($the_query->posts);
-    $user_id = $the_query->posts[0]->ID;
-    console_log('user_id');
-    console_log($user_id);
-    return $user_id;
+    if ($the_query->posts) {
+      $user_id = $the_query->posts[0]->ID;
+      console_log('user_id');
+      console_log($user_id);
+      return $user_id;
+    }
+    return '';
 }
 
 function get_available_users($current_user_id) {
