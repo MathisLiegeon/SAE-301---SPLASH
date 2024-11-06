@@ -13,7 +13,7 @@
 
   /* Fonts */
   --family: "Inria Sans", sans-serif;
-  --title-size: 3rem;
+  --title-size: 2.5rem;
   --title-weight: 600;
   --subtitle-size: 2rem;
   --subtitle-weight: 600;
@@ -28,10 +28,6 @@
 *::before,
 *::after {
   font-family: var(--family);
-}
-
-body > div:not(.hero){
-  margin-top: 46px;
 }
 
 body {
@@ -51,6 +47,10 @@ h1 {
 }
 h2 {
   font-size: var(--subtitle-size);
+  font-weight: var(--subtitle-weight);
+}
+h3 {
+  font-size: 1.6rem;
   font-weight: var(--subtitle-weight);
 }
 h4 {

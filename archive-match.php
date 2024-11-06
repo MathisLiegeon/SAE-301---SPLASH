@@ -1,5 +1,6 @@
 <div class="team-activity" id="team-activity">
         <h3>Activité</h3>
+        <span class="team-activity-wrapper">
         <div class="team-activity-container">
             <h4>Matchs en cours/à venir</h4>
             <ul>
@@ -96,4 +97,5 @@
             ?>
             </ul>
         </div>
+        </span>
     </div>

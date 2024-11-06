@@ -116,4 +116,28 @@ document.addEventListener("DOMContentLoaded", function () {
       document.body.classList.toggle("no-scroll");
     });
   }
+
+
+  const navElements = document.querySelectorAll(".team-nav-element");
+
+  navElements.forEach((element) => {
+    element.addEventListener("click", function () {
+      // Retirer la classe team-active de tous les éléments
+      navElements.forEach((el) => el.classList.remove("team-active"));
+
+      // Ajouter la classe team-active à l'élément cliqué
+      this.classList.add("team-active");
+    });
+  });
+
+  // Ajouter la classe team-active à l'élément correspondant à l'ancre dans l'URL
+  const currentHash = window.location.hash;
+  if (currentHash) {
+    const activeElement = document.querySelector(
+      `.team-nav-element[href="${currentHash}"]`
+    );
+    if (activeElement) {
+      activeElement.classList.add("team-active");
+    }
+  }
 });

@@ -15,29 +15,35 @@ console_log($social['url']);
 ?>
 
 <nav class="team-nav single-nav">
-    <a href="#team-roaster" class="team-nav-element">Présentation</a>
+    <a href="#team-header" class="team-nav-element team-active"
+    if urlpage = url#team-header style:borderbottom:solid
+    >Présentation</a>
     <a href="#team-activity" class="team-nav-element">Activité</a>
     <a href="#team-stats" class="team-nav-element">Statistiques</a>
 </nav>
 
-<header class="team-header">
+<header class="team-header" id="team-header">
     <span class="team-img">
         <?php the_post_thumbnail('large');?>
     </span>
-    <h2 class="team-title">
-        <?php the_title();?>
-    </h2>
-    <a class="team-social" href="<?php echo esc_url($social['url']);?>">
-       @<?php echo esc_html($social['title']);?>
-    </a>
+    <span>
+        <h2 class="team-title">
+            <?php the_title();?>
+        </h2>
+        <a class="team-social" href="<?php echo esc_url($social['url']);?>">
+           @<?php echo esc_html($social['title']);?>
+        </a>
+    </span>
 </header>
+<div class="team-wrapper">
+    <?php get_template_part('archive-user'); ?>
 
-<?php get_template_part('archive-user'); ?>
+    <?php get_template_part('archive-match'); ?>
 
-<?php get_template_part('archive-match'); ?>
-<div class="team-stats" id="team-stats">
-    <h3>Statistiques</h3>
-    <span>graph</span>
+    <div class="team-stats" id="team-stats">
+        <h3>Statistiques</h3>
+        <span>graph</span>
+    </div>
 </div>
 
 <?php

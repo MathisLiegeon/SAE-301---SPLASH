@@ -16,18 +16,18 @@ if ($the_query->have_posts()) :
     while ($the_query->have_posts()) : $the_query->the_post();
     console_log('the_query');
     console_log($the_query->posts);
-?> 
-
-<h2>Dernières actus</h2>
-<?php
-get_template_part('components/news-card', null, array (
-    'url' => get_permalink(),
-    'img' => get_the_post_thumbnail_url(),
-    'date' => get_the_date(),
-    'titre' => get_the_title()
-));
 ?>
-
+<div class="news-wrapper">
+<h2 class="news-title">Dernières actus</h2>
+    <?php
+    get_template_part('components/news-card', null, array (
+        'url' => get_permalink(),
+        'img' => $the_query->posts[0]->ID,
+        'date' => get_the_date(),
+        'titre' => get_the_title()
+    ));
+    ?>
+</div>
 <?php
     endwhile;
 endif;
