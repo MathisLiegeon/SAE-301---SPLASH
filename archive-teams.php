@@ -50,9 +50,7 @@ if ($the_query->have_posts()) :
                                         <?php
                                         foreach ($members as $member) :
                                             $member_name = $member['display_name'];
-                                            if ($member_name != $creator_name) :
-                                                echo '<li> <span class="teams-members">' . esc_html($member_name) . '</span> </li>';
-                                            endif;
+                                            echo '<li> <span class="teams-members">' . esc_html($member_name) . '</span> </li>';
                                         endforeach;
                                         ?>
                                     </ul>

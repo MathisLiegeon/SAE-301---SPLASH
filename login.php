@@ -37,7 +37,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <div class="forms-wrap login-wrapper">
     <div class="form-wrap">
-        
         <h1 class="forms-title">Connexion</h1>
         <?php if (!empty($error_message)) : ?>
             <p class="form-error-message" style="color: red; width:100%; text-align:center;"><?php echo esc_html($error_message); ?></p>
@@ -47,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <p class="forms-field">
                 <label class="forms-label" for="user_login">Identifiant ou adresse e-mail</label>
                 <span class="form-input-wrapper">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon_person.svg" alt="Icone représentant une personne">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/icon_person-black.svg" alt="Icone représentant une personne">
                     <input type="text" name="username" id="user_login" class="forms-input" value="" size="20" autocapitalize="off"  autocomplete="username" required placeholder="Identifiant ou adresse e-mail">
                 </span>
             </p>

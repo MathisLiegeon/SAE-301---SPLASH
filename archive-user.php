@@ -16,10 +16,12 @@ $members = get_field('members');
                 'type' => 'Capitaine',
                 'post_id' => $cuser_post_id
             ));
+            $couser_post_id = get_user_post($coach['ID']);
             get_template_part('components/player-card', null, array (
                 'name' => $coach['display_name'],
                 'id' => $coach['ID'],
-                'type' => 'Coach'
+                'type' => 'Coach',
+                'post_id' => $couser_post_id
             ));
             ?>
         </ul>
@@ -29,10 +31,12 @@ $members = get_field('members');
         <ul class="team-roaster-list">
             <?php
             foreach ($members as $member) {
+                $muser_post_id = get_user_post($member['ID']);
                 get_template_part('components/player-card', null, array (
                     'name' => $member['display_name'],
                     'id' => $member['ID'],
-                    'type' => 'Joueur'
+                    'type' => 'Joueur',
+                    'post_id' => $muser_post_id
                 ));
             }
             ?>

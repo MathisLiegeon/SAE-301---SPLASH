@@ -5,6 +5,7 @@
             <h4>Matchs en cours/à venir</h4>
             <ul>
             <?php
+            $ID = get_the_ID();
             $upcoming_matches = get_team_upcoming_matches($ID);
             if ($upcoming_matches) {
                 foreach ($upcoming_matches as $match) :

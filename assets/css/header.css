@@ -61,6 +61,7 @@
 .no-scroll {
   overflow: hidden;
 }
+
 .header-burger.open {
   gap: 0;
 }
@@ -93,7 +94,7 @@
   text-align: end;
   text-transform: uppercase;
   color: white;
-  font-size: var(--subtitle-size);
+  font-size: 1.1rem;
 }
 
 #menu-item-87,
@@ -104,7 +105,7 @@
 
   white-space: nowrap;
   text-transform: uppercase;
-  height: 70px;
+  height: 60px;
   width: 250px;
   text-align: center;
   display: grid;
