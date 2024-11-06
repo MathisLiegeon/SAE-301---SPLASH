@@ -3,7 +3,6 @@
 Template Name: Login Page
 */
 
-get_header();
 
 // if (is_user_logged_in()) {
 //     echo '<script>
@@ -41,6 +40,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
+
+get_header();
+
 ?>
 
 <div class="forms-wrap login-wrapper">

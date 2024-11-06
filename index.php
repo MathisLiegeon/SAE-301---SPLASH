@@ -3,7 +3,7 @@ get_header();
 ?>
 
 <div class="index-hero">
-    <img src="<?php echo get_template_directory_uri();?>/assets/img/img_bg.webp" alt="Image de fond d'un personnage de cs2">
+        <img src="<?php echo get_template_directory_uri();?>/assets/img/img_bg.webp" alt="Image de fond d'un personnage de cs2">
     <header>
         <h1>Bienvenue au Tournoi Esport de l'IUT Nord Franche-Comté
         </h1>

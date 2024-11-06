@@ -3,8 +3,6 @@
 Template Name: Sign in Page
 */
 
-get_header();
-
 if (is_user_logged_in()) {
     echo '<script>
         alert("Vous êtes déjà connecté");
@@ -48,6 +46,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 }
+
+get_header();
 ?>
 
 
