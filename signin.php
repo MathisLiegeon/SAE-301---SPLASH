@@ -114,6 +114,13 @@ get_header();
                 </p>
             </span>
 
+            <p class="forms-field">
+                    <label class="forms-label" for="legal_mentions">
+                        <input type="checkbox" name="legal_mentions" id="legal_mentions" required>
+                        J'accepte les <a href="<?php echo get_permalink(get_page_by_path('mentions-legales')); ?>" target="_blank">mentions légales</a>
+                    </label>
+                </p>
+
             <p class="forms-submit">
                 <span class="button-signin">
                     <input type="submit" name="wp-submit" id="wp-submit" class="button-primary button-large " value="S'inscrire">
