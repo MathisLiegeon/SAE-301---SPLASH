@@ -51,14 +51,14 @@ endif;
 </nav>
 
 <div class="user-wrapper">
-    <header class="user-hero">
-        <span class="user img">
-            <?php get_the_post_thumbnail('large');?>
+    <header class="user-header">
+        <span class="user-img">
+            <?php echo get_the_post_thumbnail($team_id); ?>
         </span>
-        <span>
+        <span class="user-header-content">
         <h2 class="user-title"><?php the_title();?></h2>
-        <span class="user-team"><?php echo esc_html($team_name);?></span>
-    </span>
+        <span class="user-team">Équipe : <?php echo esc_html($team_name);?></span>
+        </span>
     </header>
 
     <div class="user-container" id="team-stats">

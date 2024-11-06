@@ -5,8 +5,36 @@
   gap: 4rem;
 }
 
+.user-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 400px;
+    position: relative;
+}
+.user-header-content {
+    padding: 3rem;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.user-img img {
+    position: absolute;
+    z-index: -1;
+    opacity: 0.8;
+    height: 100%;
+    object-fit: contain;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .user-container {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+}
+.user-team {
+    font-weight: bold;
+    color: var(--white);
 }
