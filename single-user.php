@@ -73,6 +73,12 @@ endif;
         ));
         ?>
     </div>
+    <div class="user-container" id="team-stats">
+        <?php get_template_part('archive-match-single', null, array(
+            'id' => $team_id,
+        )); ?>
+
+    </div>
 </div>
 </div>
 <?php

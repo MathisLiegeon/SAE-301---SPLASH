@@ -146,7 +146,9 @@ function get_user_team($user_id) {
     );
 
     $query = new WP_Query($args);
-    return $query->posts[0];
+    if ($query && !empty($query->posts)) {
+      return $query->posts[0];
+  }
 }
 
 function get_user_post($id) {

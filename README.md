@@ -1,3 +1,3 @@
 # SAE 301 - SPLASH
 
-# URL : splash-tournoi.fr
+# URL : https://splash-tournoi.mathisliegeon.fr/

@@ -24,6 +24,8 @@
   color: var(--gray);
   background: none;
   border: none;
+  height: 100%;
+  width: 100%;
 }
 .form-search-teams input:focus {
   outline: none;
@@ -69,7 +71,7 @@
   align-items: center;
   justify-content: center;
 }
-.teams-element > a > span {
+.teams-element > a > .team-img {
   padding: 1rem;
   display: flex;
   flex-direction: column;

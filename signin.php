@@ -159,10 +159,7 @@ get_header();
                     </span>
                 </p>
 
-                <div class="form-content">
-                    <label class="form-label" for="user_photo">Logo de l'équipe</label>
-                    <input type="file" id="team-logo" name="user_photo" accept="image/*">
-                </div>
+
 
                 <p class="forms-field">
                     <label class="forms-label" for="user_email">Adresse e-mail</label>

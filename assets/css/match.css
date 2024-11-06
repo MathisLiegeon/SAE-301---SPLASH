@@ -17,6 +17,11 @@
 
 
 /* Match */
+.match-content {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
 .match-single-card-content {
     gap: 1.5rem;
 }

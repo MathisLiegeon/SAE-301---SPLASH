@@ -21,9 +21,9 @@ $vod_3 = get_field('vod-3');
 
 <div class="match-wrapper">
 <header class="match-header">
-    <span class="match-img">
+    <a href="<?php echo get_permalink($tournament_id); ?>" class="match-img">
         <?php echo get_the_post_thumbnail($tournament_id); ?>
-    </span>
+    </a>
     <h2 class="match-title">
         <?php echo get_the_title($tournament_id); ?>
     </h2>

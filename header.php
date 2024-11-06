@@ -48,9 +48,15 @@
       </nav>
     </header>
     <nav class="header-nav-secondary">
+      <?php if (get_user_team(get_current_user_id())) :?>
       <a href="<?php echo is_user_logged_in() ? get_permalink($user_profile->ID) : '#'?>">
         <img src="<?php echo get_template_directory_uri();?>/assets/icons/icon_person.svg" alt="Icone">
       </a>
+      <?php
+      else :
+        echo'<span style="color:red;"></span>'
+      endif;
+      ?>
       <a href="<?php echo esc_url(home_url());?>">
         <img src="<?php echo get_template_directory_uri();?>/assets/icons/icon_logo.svg" alt="Icone">
       </a>
