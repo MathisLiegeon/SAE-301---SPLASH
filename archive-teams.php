@@ -15,7 +15,7 @@ console_log($the_query);
 if ($the_query->have_posts()) :
 ?>
 
-<div class="teams-container">
+<div class="teams-wrapper">
         <span class="form-element">
             <div class="form-field form-field-search" id="project-search-5">
                 <div class="form-select-option">
@@ -29,36 +29,38 @@ if ($the_query->have_posts()) :
                             <input type="text" id="project-search-5" placeholder="Rechercher" name="">
                         </div>
                     </header>
-                    <ul class="teams-list form-search-option">
-                        <?php
-                        while ($the_query->have_posts()) : $the_query->the_post();
-                        $members = get_field('members');
-                        $captain = get_field('captain');
-                        $captain_name = $captain['display_name']
+                    <div class="teams-container">
+                        <ul class="teams-list form-search-option">
+                            <?php
+                            while ($the_query->have_posts()) : $the_query->the_post();
+                            $members = get_field('members');
+                            $captain = get_field('captain');
+                            $captain_name = $captain['display_name']
 
-                        ?>
-                        <li class="teams-element search-element             ">
-                            <a href="<?php echo esc_url(get_permalink());?>" class="teams-link">
-                                <span class="teams-img">
-                                    <?php the_post_thumbnail('large');?>
-                                </span>
-                                <h3 class="teams-title">
-                                    <?php echo esc_html(get_the_title());?>
-                                </h3>
-                                <ul class="teams-content">
-                                    <?php
-                                    foreach ($members as $member) :
-                                        $member_name = $member['display_name'];
-                                        if ($member_name != $creator_name) :
-                                            echo '<li> <span class="teams-members">' . esc_html($member_name) . '</span> </li>';
-                                        endif;
-                                    endforeach;
-                                    ?>
-                                </ul>
-                            </a>
-                        </li>
-                        <?php endwhile; ?>
-                    </ul>
+                            ?>
+                            <li class="teams-element search-element             ">
+                                <a href="<?php echo esc_url(get_permalink());?>" class="teams-link">
+                                    <span class="teams-img">
+                                        <?php the_post_thumbnail('large');?>
+                                    </span>
+                                    <h3 class="teams-title">
+                                        <?php echo esc_html(get_the_title());?>
+                                    </h3>
+                                    <ul class="teams-content">
+                                        <?php
+                                        foreach ($members as $member) :
+                                            $member_name = $member['display_name'];
+                                            if ($member_name != $creator_name) :
+                                                echo '<li> <span class="teams-members">' . esc_html($member_name) . '</span> </li>';
+                                            endif;
+                                        endforeach;
+                                        ?>
+                                    </ul>
+                                </a>
+                            </li>
+                            <?php endwhile; ?>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </span>
