@@ -10,7 +10,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100vw;
+    width: 100%;
     height: 400px;
     position: relative;
 }
@@ -37,4 +37,8 @@
 .user-team {
     font-weight: bold;
     color: var(--white);
+}
+
+.single-nav {
+    z-index: 3;
 }

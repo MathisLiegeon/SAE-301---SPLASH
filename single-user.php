@@ -49,7 +49,7 @@ endif;
     <a href="#user-overview" class="team-nav-element team-active">Vue d'ensemble</a>
     <a href="#user-historic" class="team-nav-element">Historique des matchs</a>
 </nav>
-
+<div class="responsive">
 <div class="user-wrapper">
     <header class="user-header">
         <span class="user-img">
@@ -73,6 +73,7 @@ endif;
         ));
         ?>
     </div>
+</div>
 </div>
 <?php
 get_footer();
