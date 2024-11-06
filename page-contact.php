@@ -5,6 +5,7 @@ Template Name: Page Contact
 
 get_header();
 ?>
+<div class="responsive">
 
 <div class="contact">
     <h1>Contact</h1>
@@ -12,6 +13,7 @@ get_header();
     <a href="mailto:but-mmi-montbeliard@univ-fcomte.fr">but-mmi-montbeliard@univ-fcomte.fr</a>
     <p>Mon mail</p>
     <a href="mailto:liegeon.mathis@gmail.com">liegeon.mathis@gmail.com"</a>
+</div>
 </div>
 
 <?php

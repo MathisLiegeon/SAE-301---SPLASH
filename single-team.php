@@ -13,7 +13,6 @@ $social = get_field('social');
 console_log($social);
 console_log($social['url']);
 ?>
-
 <nav class="team-nav single-nav">
     <a href="#team-header" class="team-nav-element team-active"
     if urlpage = url#team-header style:borderbottom:solid
@@ -22,6 +21,7 @@ console_log($social['url']);
     <a href="#team-stats" class="team-nav-element">Statistiques</a>
 </nav>
 
+<div class="responsive">
 <header class="team-header" id="team-header">
     <span class="team-img">
         <?php the_post_thumbnail('large');?>
@@ -45,6 +45,6 @@ console_log($social['url']);
         <span>graph</span>
     </div>
 </div>
-
+</div>
 <?php
 get_footer();

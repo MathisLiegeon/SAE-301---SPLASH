@@ -20,7 +20,7 @@ $ID = get_the_ID();
 console_log($ID);
 
 ?>
-
+<div class="responsive">
 <header class="to-header">
     <span class="to-logo">
         <?php the_post_thumbnail();?>
@@ -259,6 +259,7 @@ if ($post_query->have_posts()) :
     ?>
 <?php
     endforeach;
+echo '</div>';
 echo '</div>';
 endif;
 endif;

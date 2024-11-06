@@ -26,9 +26,11 @@ get_header();
     <div class="section-2-container">
         <span class="section-2-content">
         <?php
+        $inscription_page_id = get_page_by_path('Inscription');
+        $inscription_url = $inscription_page_id ? get_permalink($inscription_page_id) : '#';
         get_template_part('components/button', null, array(
             'text' => 'S\'inscrire',
-            'url' => 'wp_login_url()',
+            'url' => $inscription_url,
             'class' => ''
         ));
         ?>
@@ -37,9 +39,11 @@ get_header();
         <span>OU</span>
         <span class="section-2-content">
         <?php
+        $tournament_page_id = get_page_by_path('/tournament-page');
+        $tournament_url = $tournament_page_id ? get_permalink($tournament_page_id) : home_url('/tournament-page');
         get_template_part('components/button', null, array(
             'text' => 'Détails du tournoi',
-            'url' => 'home_url(/)',
+            'url' => $tournament_url,
             'class' => ''
         ));
         ?>

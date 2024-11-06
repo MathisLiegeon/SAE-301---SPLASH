@@ -11,7 +11,7 @@ $args = array (
 );
 
 $the_query = new WP_Query($args);
-
+echo '<div class="responsive">';
 echo '<div class="news-wrapper">';
 echo '<h2 class="news-title">Dernières actus</h2>';
 
@@ -32,6 +32,7 @@ if ($the_query->have_posts()) :
     ?>
 <?php
     endforeach;
+echo '</div>';
 echo '</div>';
 endif;
 get_footer();

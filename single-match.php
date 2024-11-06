@@ -17,6 +17,7 @@ $vod_1 = get_field('vod-1');
 $vod_2 = get_field('vod-2');
 $vod_3 = get_field('vod-3');
 ?>
+<div class="responsive">
 
 <div class="match-wrapper">
 <header class="match-header">
@@ -93,6 +94,7 @@ $vod_3 = get_field('vod-3');
         endif;
         ?>
     </div>
+</div>
 </div>
 </div>
 
