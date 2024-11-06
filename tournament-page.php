@@ -17,20 +17,6 @@ $date = get_field('start');
 $ID = get_the_ID();
 console_log($ID);
 
-$args2 = array (
-    'post_type' => 'match',
-    'posts_per_page' => '4',
-	'meta_query' => array(
-		array(
-			'key' => 'place',
-			'value' => array(1, 2, 3, 4),
-			'compare' => 'IN'
-		)
-	)
-);
-$match_quart = new WP_Query($args2);
-
-if ($match_quart->have_posts()) :
 ?>
 
 <header class="to_header">
@@ -47,6 +33,20 @@ if ($match_quart->have_posts()) :
 	<div class="to-match-container">
 		<span class="to-text">Quart de finale</span>
     	<?php
+		$args2 = array (
+			'post_type' => 'match',
+			'posts_per_page' => '4',
+			'meta_query' => array(
+				array(
+					'key' => 'place',
+					'value' => array(1, 2, 3, 4),
+					'compare' => 'IN'
+				)
+			)
+		);
+		$match_quart = new WP_Query($args2);
+		
+		if ($match_quart->have_posts()) :
 		foreach ($match_quart->posts as $match) :
 
 		console_log($match_quart->posts);
@@ -164,7 +164,7 @@ if ($match_quart->have_posts()) :
 		console_log($match_id);
 		$place = get_post_meta($match_id, 'place', true);
 		$team_1 = get_post_meta($match_id, 'team-1', true);
-		$team_1_id = $team_1[0];
+		$team_1_id = $team_1[0]; 
 		$team_2 = get_post_meta($match_id, 'team-2', true);
 		$team_2_id = $team_2[0];
 		$score_te1 = get_post_meta($match_id, 'score_te1', true);
@@ -191,7 +191,66 @@ if ($match_quart->have_posts()) :
 	</div>
 </div>
 
+
+
 <?php
+$tams_list = array (
+    'post_type' => 'team',
+    'post_per_page' => -1
+);
+
+$teams= new WP_Query($tams_list);
+echo '<div class="to-news-wrapper">';
+echo '<h2 class="news-title">ÉQUIPE PARTICIPANTES</h2>';
+echo '<div class="to-news-content">';
+
+if ($teams->have_posts()) :
+    foreach ($teams->posts as $team) :
+
+?>
+    <?php
+    get_template_part('components/team-card', null, array (
+        'id' => $team->ID,
+    ));
+    ?>
+
+<?php
+endforeach;
+endif;
+?>
+</div>
+</div>
+
+<?php
+$args = array (
+    'post_type' => 'article',
+    'post_per_page' => -1
+);
+
+$news = new WP_Query($args);
+
+if ($news->have_posts()) :
+    while ($news->have_posts()) : $news->the_post();
+    console_log('NEWSSS');
+    console_log($news->posts);
+    console_log('ID');
+	console_log($news->posts[0]->ID)
+?>
+<div class="news-wrapper-to">
+<h2 class="news-title">Dernières actus</h2>
+    <?php
+    get_template_part('components/news-card', null, array (
+        'url' => $news->posts[0]->ID,
+        'img' => $news->posts[0]->ID,
+        'date' => get_the_date(),
+        'titre' => get_the_title($news->posts[0]->ID)
+    ));
+    ?>
+</div>
+
+<?php
+endwhile;
+endif;
 endif;
 endif;
 

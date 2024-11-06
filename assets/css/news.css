@@ -9,6 +9,11 @@
     gap: 1rem;
     min-height: 70svh;
 }
+.news-wrapper-to {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
 
 /* Card */
 .news-card {

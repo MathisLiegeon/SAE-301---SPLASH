@@ -16,6 +16,9 @@ if ($the_query->have_posts()) :
     while ($the_query->have_posts()) : $the_query->the_post();
     console_log('the_query');
     console_log($the_query->posts);
+    $ID = get_the_ID();
+    console_log($ID);
+    $equipe1 = get_post_meta($ID, 'equipe1', true);
 ?>
 <div class="news-wrapper">
 <h2 class="news-title">Dernières actus</h2>

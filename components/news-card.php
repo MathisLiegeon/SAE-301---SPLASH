@@ -1,5 +1,9 @@
 <li class="news-card">
-<a href="<?php echo esc_url($args['url']); ?>">
+<?php
+console_log('url'); 
+console_log($args['url']);
+?>
+<a href="<?php echo get_permalink($args['url']); ?>">
     <span class="news-card-img">
         <?php echo get_the_post_thumbnail($args['img']); ?>
     </span>

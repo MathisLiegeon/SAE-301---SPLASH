@@ -4,3 +4,34 @@
     flex-direction: column;
     gap: .5rem;
 }
+
+/* TEAMS */
+.team-card {
+    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: var(--tertiary);
+    padding: 0.5rem;
+    border-radius: 3px;
+    color: var(--white);
+}
+
+.team-card-img > img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.to-news-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem;
+}
+.to-news-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .3rem;
+}
