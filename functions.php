@@ -37,6 +37,25 @@ function register_my_menus() {
   }
 add_action('init', 'register_my_menus', 0);
 
+// Modify the menus
+function modify_menu($items, $args) {
+    if ($args->theme_location == 'header-menu'  || $args->theme_location == 'footer-menu') {
+      if (is_user_logged_in()) {
+        foreach ($items as $key => $item) {
+          if ($item->title == 'Connexion') {
+            $items[$key]->title = 'Deconnexion';
+            $items[$key]->url = wp_logout_url(home_url());
+          }
+          if ($item->title == 'Inscription') {
+            unset($items[$key]);
+          }
+        }
+      }
+    }
+    return $items;
+}
+add_filter('wp_nav_menu_objects', 'modify_menu', 10, 2);
+
 // --------------------- UTILITY FUNCTIONS ---------------------
 function get_team_upcoming_matches($team_id) {
   $args = array(

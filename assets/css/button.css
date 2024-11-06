@@ -25,3 +25,8 @@
 .button:hover {
   color: var(--lightgray);
 }
+
+.form-submit input{
+  background-color: var(--primary);
+  border: none;
+}

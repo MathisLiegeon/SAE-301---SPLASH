@@ -118,7 +118,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <span class="button-signin">
                     <input type="submit" name="wp-submit" id="wp-submit" class="button-primary button-large " value="S'inscrire">
                 </span>
-                <a href="<?php echo esc_url(get_page_link(get_page_by_title('Connexion')->ID)); ?>">Déjà inscrit ? Connecte-toi</a>
+                <a class="form-no-account" href="<?php echo esc_url(get_page_link(get_page_by_title('Connexion')->ID)); ?>">Déjà inscrit ? Connecte-toi</a>
             </p>
         </form>
         <p id="nav" class="forms-annexe">

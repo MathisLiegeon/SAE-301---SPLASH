@@ -68,3 +68,15 @@
     gap: 1.5rem;
     color: var(--white);
 }
+.section-2-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5rem;
+}
+
+.index-btn-text {
+  width: 80%;
+  text-align: center;
+  font-size: smaller;
+}

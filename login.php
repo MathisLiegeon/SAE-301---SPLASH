@@ -16,15 +16,21 @@ get_header();
 $error_message = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    console_log('POST request received');
     $username = sanitize_text_field($_POST['username']);
-    $password = $_POST['password'];
+    $password = sanitize_text_field($_POST['password']);
     $remember = isset($_POST['rememberme']);
+    console_log($username);
+    console_log($password);
+    console_log($remember);
 
     $user = wp_signon(array(
         'user_login'    => $username,
         'user_password' => $password,
         'remember'      => $remember
     ));
+    console_log('User result:');
+    console_log($user);
 
     if (is_wp_error($user)) {
         $error_message = 'Identifiant ou mot de passe incorrect.';
@@ -33,6 +39,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 }
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 ?>
 
 <div class="forms-wrap login-wrapper">

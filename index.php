@@ -5,22 +5,26 @@ get_header();
 <div class="index-hero">
     <img src="<?php echo get_template_directory_uri();?>/assets/img/img_bg.webp" alt="Image de fond d'un personnage de cs2">
     <header>
-        <h1><?php the_title();?></h1>
-        <span>Subtitle</span>
+        <h1>Bienvenue au Tournoi Esport de l'IUT Nord Franche-Comté
+        </h1>
+        <span>Un événement ouvert à tous, où compétition et convivialité se rencontrent.
+        </span>
     </header>
     <footer>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent placerat nulla eu posuere mattis. Maecenas non finibus nulla, eu lobortis dolor</p>
+        <p>Rejoignez-nous pour un tournoi unique en son genre, où les étudiants et amateurs d'esport de toute la région s'affrontent dans une ambiance électrique. Que vous soyez joueur ou spectateur, préparez-vous à vivre une expérience inoubliable.</p>
         <a href="#index-section-1"></a>
     </footer>
 </div>
 
 <div class="index-section-1" id="index-section-1">
-    <p>IUT Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent placerat nulla eu posuere mattis. Maecenas non finibus nulla, eu lobortis dolor. Phasellus cursus dictum velit, ac gravida felis lobortis sit amet. Cras rhoncus maximus fermentum. Nam vitae pulvinar ante. Aenean mattis vitae risus eget hendrerit.</p>
-    <p>OUVERT A TOUS Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent placerat nulla eu posuere mattis. Maecenas non </p>
+    <p>Notre institution est fière de promouvoir l'esport comme un vecteur de développement personnel et communautaire. Venez découvrir notre tournoi et participez à cette aventure collective.</p>
+    <p>Que vous soyez un joueur chevronné ou un simple curieux, notre tournoi est conçu pour être inclusif et accessible à tous. Rejoignez-nous pour célébrer l'esprit du jeu et la compétition saine.</p>
 </div>
 <div class="index-section-2">
-    <h2>Qu'attend tu ?</h2>
+    <h2>Qu'attendez-vous ?
+    </h2>
     <div class="section-2-container">
+        <span class="section-2-content">
         <?php
         get_template_part('components/button', null, array(
             'text' => 'S\'inscrire',
@@ -28,7 +32,10 @@ get_header();
             'class' => ''
         ));
         ?>
+        <p class="index-btn-text">Ne manquez pas votre chance de participer. Inscrivez-vous dès maintenant pour garantir votre place dans le tournoi</p>
+        </span>
         <span>OU</span>
+        <span class="section-2-content">
         <?php
         get_template_part('components/button', null, array(
             'text' => 'Détails du tournoi',
@@ -36,6 +43,8 @@ get_header();
             'class' => ''
         ));
         ?>
+        <p class="index-btn-text">Découvrez toutes les informations sur le déroulement du tournoi, les équipes participantes, et bien plus encore.</p>
+        </span>
     </div>
 </div>
 
