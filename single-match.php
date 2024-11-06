@@ -18,6 +18,7 @@ $vod_2 = get_field('vod-2');
 $vod_3 = get_field('vod-3');
 ?>
 
+<div class="match-wrapper">
 <header class="match-header">
     <span class="match-img">
         <?php echo get_the_post_thumbnail($tournament_id); ?>
@@ -88,6 +89,7 @@ $vod_3 = get_field('vod-3');
         endif;
         ?>
     </div>
+</div>
 </div>
 
 <?php

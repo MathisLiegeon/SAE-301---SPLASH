@@ -1,0 +1,51 @@
+/* Main */
+.match-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+    gap: 3rem;
+}
+/* Header */
+.match-header {
+    padding-top: 86px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Match */
+.match-single-card-content {
+    gap: 1.5rem;
+}
+.match-match > li {
+    background: none;
+}
+.match-single-score {
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+}
+.match-single-score-sm {
+    font-size: smaller;
+}
+.match-single-card-date {
+    margin-top: 10px;
+}
+
+/* Lives */
+.match-container {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+.live-card {
+    display: block;
+    background-color: var(--tertiary);
+    width: 100%;
+    padding: .5rem;
+    color: var(--white);
+    border-radius: 3px;
+}
