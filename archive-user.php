@@ -10,18 +10,18 @@ $members = get_field('members');
         <ul class="team-roaster-list">
             <?php
             $cuser_post_id = get_user_post($captain['ID']);
+            console_log('captain[ID]');
+            console_log($captain['ID']);
             get_template_part('components/player-card', null, array (
                 'name' => $captain['display_name'],
                 'id' => $captain['ID'],
-                'type' => 'Capitaine',
-                'post_id' => $cuser_post_id
+                'type' => 'Capitaine'
             ));
             $couser_post_id = get_user_post($coach['ID']);
             get_template_part('components/player-card', null, array (
                 'name' => $coach['display_name'],
                 'id' => $coach['ID'],
-                'type' => 'Coach',
-                'post_id' => $couser_post_id
+                'type' => 'Coach'
             ));
             ?>
         </ul>
@@ -36,8 +36,7 @@ $members = get_field('members');
                     get_template_part('components/player-card', null, array (
                         'name' => $member['display_name'],
                         'id' => $member['ID'],
-                        'type' => 'Joueur',
-                        'post_id' => $muser_post_id
+                        'type' => 'Joueur'
                     ));
                 }
             }

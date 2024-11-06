@@ -1,0 +1,12 @@
+.user-wrapper {
+  padding: 106px .5rem 0 .5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.user-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}

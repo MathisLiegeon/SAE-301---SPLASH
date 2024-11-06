@@ -1,5 +1,5 @@
 <li class="player-card">
-    <a href="<?php get_permalink($args['post_id']);?>">
+    <a href="<?php echo get_permalink($args['id']);?>">
         <span class="team-name">
             <?php echo esc_html($args['name']); ?>
         </span>

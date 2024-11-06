@@ -34,9 +34,9 @@
   );
   $the_query = new WP_Query($args);
   console_log('the_query');
-  console_log($the_query, true);
+  console_log($the_query);
   $user_profile = $the_query->posts[0];
-  console_log($user_profile, true);
+  console_log($user_profile);
   endif;
   ?>
   <body>
