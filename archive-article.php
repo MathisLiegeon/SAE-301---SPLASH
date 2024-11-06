@@ -12,26 +12,26 @@ $args = array (
 
 $the_query = new WP_Query($args);
 
+echo '<div class="news-wrapper">';
+echo '<h2 class="news-title">Dernières actus</h2>';
+
 if ($the_query->have_posts()) :
-    while ($the_query->have_posts()) : $the_query->the_post();
+    foreach ($the_query->posts as $post) :
     console_log('the_query');
-    console_log($the_query->posts);
     $ID = get_the_ID();
     console_log($ID);
     $equipe1 = get_post_meta($ID, 'equipe1', true);
 ?>
-<div class="news-wrapper">
-<h2 class="news-title">Dernières actus</h2>
     <?php
     get_template_part('components/news-card', null, array (
-        'url' => get_permalink(),
-        'img' => $the_query->posts[0]->ID,
+        'url' => $post->ID,
+        'img' => $post->ID,
         'date' => get_the_date(),
         'titre' => get_the_title()
     ));
     ?>
-</div>
 <?php
-    endwhile;
+    endforeach;
+echo '</div>';
 endif;
 get_footer();

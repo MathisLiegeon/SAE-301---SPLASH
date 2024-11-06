@@ -1,8 +1,28 @@
+/* Header */
+.to-header {
+    padding: 86px 0 3rem 3rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+.to-header span{
+    color: var(--white);
+}
+
 .to-containern,
 .to-match-container {
     display: flex;
     flex-direction: column;
     gap: .5rem;
+}
+
+/* MATCH */
+.to-text {
+    text-align: center;
+    color: var(--white);
+}
+.to-bracket-title {
+    margin-bottom: 0.5rem;
 }
 
 /* TEAMS */
@@ -28,6 +48,8 @@
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+}
+.to-teams-wrapper {
     padding: 0.5rem;
 }
 .to-news-content {

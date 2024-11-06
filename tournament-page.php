@@ -13,23 +13,27 @@ $args = array (
 $the_query = new WP_Query($args);
 
 if ($the_query->have_posts()) :
+	while ($the_query->have_posts()) : $the_query->the_post();
+
 $date = get_field('start');
 $ID = get_the_ID();
 console_log($ID);
 
 ?>
 
-<header class="to_header">
+<header class="to-header">
     <span class="to-logo">
         <?php the_post_thumbnail();?>
     </span>
+	<span>
     <h2 class="to-title">SPLASH</h2>
     <h2 class="to-title">SPLIT 1</h2>
     <span><?php echo esc_html($date);?></span>
+	</span>
 </header>
 
 <div class="to-container">
-    <h3>Bracket</h3>
+    <h3 class="to-bracket-title">Bracket</h3>
 	<div class="to-match-container">
 		<span class="to-text">Quart de finale</span>
     	<?php
@@ -200,7 +204,7 @@ $tams_list = array (
 );
 
 $teams= new WP_Query($tams_list);
-echo '<div class="to-news-wrapper">';
+echo '<div class="to-news-wrapper to-teams-wrapper">';
 echo '<h2 class="news-title">ÉQUIPE PARTICIPANTES</h2>';
 echo '<div class="to-news-content">';
 
@@ -222,36 +226,37 @@ endif;
 </div>
 
 <?php
-$args = array (
+$post_list = array (
     'post_type' => 'article',
     'post_per_page' => -1
 );
 
-$news = new WP_Query($args);
+$post_query = new WP_Query($post_list);
 
-if ($news->have_posts()) :
-    while ($news->have_posts()) : $news->the_post();
-    console_log('NEWSSS');
-    console_log($news->posts);
-    console_log('ID');
-	console_log($news->posts[0]->ID)
+echo '<div class="to-news-wrapper">';
+echo '<h2 class="news-title">Dernières actus</h2>';
+
+if ($post_query->have_posts()) :
+    foreach ($post_query->posts as $post) :
+    console_log('the_query');
+    $ID = get_the_ID();
+    console_log($ID);
+    $equipe1 = get_post_meta($ID, 'equipe1', true);
 ?>
-<div class="news-wrapper-to">
-<h2 class="news-title">Dernières actus</h2>
     <?php
     get_template_part('components/news-card', null, array (
-        'url' => $news->posts[0]->ID,
-        'img' => $news->posts[0]->ID,
+        'url' => $post->ID,
+        'img' => $post->ID,
         'date' => get_the_date(),
-        'titre' => get_the_title($news->posts[0]->ID)
+        'titre' => get_the_title()
     ));
     ?>
-</div>
-
 <?php
+    endforeach;
+echo '</div>';
+endif;
+endif;
 endwhile;
-endif;
-endif;
 endif;
 
 wp_reset_postdata();
