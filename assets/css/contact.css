@@ -1,0 +1,10 @@
+.contact {
+    padding: 86px 1rem 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: var(--white);
+}
+.contact a{
+    color: var(--primary);
+}

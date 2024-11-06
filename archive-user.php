@@ -32,12 +32,14 @@ $members = get_field('members');
             <?php
             foreach ($members as $member) {
                 $muser_post_id = get_user_post($member['ID']);
-                get_template_part('components/player-card', null, array (
-                    'name' => $member['display_name'],
-                    'id' => $member['ID'],
-                    'type' => 'Joueur',
-                    'post_id' => $muser_post_id
-                ));
+                if ($captain['ID'] != $member['ID']) {
+                    get_template_part('components/player-card', null, array (
+                        'name' => $member['display_name'],
+                        'id' => $member['ID'],
+                        'type' => 'Joueur',
+                        'post_id' => $muser_post_id
+                    ));
+                }
             }
             ?>
         </ul>

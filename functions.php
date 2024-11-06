@@ -50,6 +50,20 @@ function modify_menu($items, $args) {
             unset($items[$key]);
           }
         }
+        if (get_current_user_published_team_id() ){
+            foreach ($items as $key => $item) {
+                if ($item->title == 'Créer une équipe') {
+                    unset($items[$key]);
+                  }
+            }
+        }
+      } else {
+        foreach ($items as $key => $item) {
+            if ($item->title == 'Créer une équipe') {
+                unset($items[$key]);
+              }
+        }
+
       }
     }
     return $items;
@@ -156,3 +170,74 @@ function get_user_post($id) {
     console_log($user_id);
     return $user_id;
 }
+
+function get_available_users($current_user_id) {
+    $users_in_teams = array();
+    $teams = get_posts(array('post_type' => 'team', 'numberposts' => -1, 'post_status' => array('publish', 'pending')));
+
+    foreach ($teams as $team) {
+        $team_members = get_field('members', $team->ID);
+        if (is_array($team_members)) {
+            $users_in_teams = array_merge($users_in_teams, array_map(function($member) {
+                return is_array($member) ? $member['ID'] : $member;
+            }, $team_members));
+        }
+    }
+
+  $users_in_teams = array_unique($users_in_teams);
+  $all_users = get_users();
+
+  $available_users = [];
+  foreach ($all_users as $user) {
+      if (!in_array($user->data->ID, $users_in_teams) ) {
+          if ($user->data->ID == $current_user_id) {
+          } else {
+              $available_users[] = $user;
+          }
+      }
+  }
+  return $available_users;
+}
+
+function get_current_user_published_team_id() {
+  $current_user_id = get_current_user_id();
+
+  $args = array(
+    'post_type' => 'team',
+    'posts_per_page' => -1,
+    'post_status' => array('publish'),
+    'meta_query' => array(
+      array(
+        'key' => 'members',
+        'value' => '"' . $current_user_id . '"',
+        'compare' => 'LIKE'
+      )
+    )
+  );
+
+  $user_team = new WP_Query($args);
+  $user_team_id = $user_team->posts ? $user_team->posts[0]->ID : null;
+
+  return $user_team_id;
+}
+
+function delete_team() {
+  if (isset($_POST['delete_team']) && $_POST['delete_team'] == '1') {
+
+    if (!isset($_POST['delete_team_nonce']) || !wp_verify_nonce($_POST['delete_team_nonce'], 'delete_team_action')) {
+      wp_die('Nonce verification failed');
+    }
+
+    $team_id = intval($_POST['team_id']);
+
+    $deleted = wp_delete_post($team_id, true);
+    if ($deleted) {
+        wp_redirect(add_query_arg('message', 'team_deleted', home_url()));
+        exit;
+    } else {
+        wp_redirect(add_query_arg('message', 'delete_failed', home_url()));
+        exit;
+    }
+  }
+}
+add_action('init', 'delete_team');

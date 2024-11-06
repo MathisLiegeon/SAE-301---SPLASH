@@ -43,6 +43,7 @@ if ($the_query->have_posts()) :
                                     <span class="teams-img">
                                         <?php the_post_thumbnail('large');?>
                                     </span>
+                                    <span>
                                     <h3 class="teams-title">
                                         <?php echo esc_html(get_the_title());?>
                                     </h3>
@@ -54,6 +55,7 @@ if ($the_query->have_posts()) :
                                         endforeach;
                                         ?>
                                     </ul>
+                                    </span>
                                 </a>
                             </li>
                             <?php endwhile; ?>
